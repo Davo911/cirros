@@ -19,7 +19,7 @@ source "${0%/*}/common-functions.sh"
 
 burl="https://launchpad.net/ubuntu/+archive/primary/+files/"
 outdir="./download"
-def_arches="x86_64 arm ppc64le aarch64"
+def_arches="x86_64 arm ppc64le aarch64 s390x"
 
 case "$1" in
     --outdir=*) outdir="${1#*=}"; shift;;
@@ -77,7 +77,7 @@ fmt_4_15() {
     extras="linux-modules linux-modules-extra"
     case "$xarch" in
         # no big endian kernel or 4.15
-        amd64|ppc64el) image="linux-image-unsigned";;
+        amd64|ppc64el|s390x) image="linux-image-unsigned";;
         arm64) :;;
         armhf) extras="linux-modules";;
     esac
@@ -102,6 +102,7 @@ for arch in "$@"; do
         arm) xarch="armhf"; flav="generic";;
         aarch64) xarch=arm64; flav="generic";;
         ppc64le) xarch="ppc64el"; flav="generic";;
+        s390x) xarch="s390x"; flav="generic";;
         x86_64|arm64) flav="generic";;
         *) fail "unknown kernel:arch for $kver:$arch"
     esac

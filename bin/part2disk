@@ -169,7 +169,11 @@ dd if=/dev/zero of="${dimg}" bs=$ssize count=$tot_size_sectors \
     fail "failed to write to ${dimg}"
 
 debug 2 "create partitions"
-sgdisk -n 15:2048:+8M -t 15:${ptype} -N 1 $dimg
+if [ -n "$ptype" ]; then
+    sgdisk -n 15:2048:+8M -t 15:${ptype} -N 1 $dimg
+else
+    sgdisk -N 1 $dimg
+fi
 loop_nr=`kpartx -av $dimg | head -n1 | cut -d" " -f3 | cut -d"p" -f2`
 
 debug 2 "parted $dimg print"

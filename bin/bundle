@@ -348,6 +348,7 @@ case $arch in
     x86_64) grub_options="--grub1 --grub-efi";;
     arm|aarch64) grub_options="--grub-efi";;
     ppc*) grub_options="--grub-ieee";;
+    s390x) grub_options=;;
     *) grub_options=;;
 esac
 

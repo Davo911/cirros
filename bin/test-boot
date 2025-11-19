@@ -68,6 +68,9 @@ case $GUESTARCH in
         GUESTARCH=ppc64 ;;
     x86_64)
         MACHINE=pc ;;
+    s390x)
+        MACHINE=s390-ccw-virtio
+        EXTRA_OPTS="-kernel $RELEASE_DIR/cirros-$VER-s390x-kernel -initrd $RELEASE_DIR/cirros-$VER-s390x-initramfs" ;;
 esac
 
 set -x  # show next command
