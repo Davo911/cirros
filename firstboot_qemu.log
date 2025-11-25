@@ -1,0 +1,259 @@
+qemu-system-s390x -enable-kvm -nographic -m 1024 \
+  -kernel release/cirros-d251120-s390x-kernel \
+  -initrd release/cirros-d251120-s390x-initramfs \
+  -drive file=release/cirros-d251120-s390x-disk.img,format=qcow2,if=virtio \
+  -append "root=/dev/vda1 console=ttysclp0"
+
+[    0.425366] Linux version 5.15.0-117-generic (buildd@bos02-s390x-012) (gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0, GNU ld (GNU Binutils for Ubuntu) 2.38) #127-Ubuntu SMP Fri Jul 5 20:13:04 UTC 2024 (Ubuntu 5.15.0-117.127-generic 5.15.158)
+[    0.425393] setup: Linux is running under KVM in 64-bit mode
+[    0.429204] setup: Relocating AMODE31 section of size 0x00003000
+[    0.429245] setup: The maximum memory size is 1024MB
+[    0.429954] cpu: 1 configured CPUs, 0 standby CPUs
+[    0.430147] Write protected kernel read-only data: 18808k
+[    0.430296] Zone ranges:
+[    0.430302]   DMA      [mem 0x0000000000000000-0x000000007fffffff]
+[    0.430312]   Normal   empty
+[    0.430315] Movable zone start for each node
+[    0.430316] Early memory node ranges
+[    0.430318]   node   0: [mem 0x0000000000000000-0x000000003fffffff]
+[    0.430325] Initmem setup node 0 [mem 0x0000000000000000-0x000000003fffffff]
+[    0.493491] percpu: Embedded 33 pages/cpu s94976 r8192 d32000 u135168
+[    0.493577] Built 1 zonelists, mobility grouping on.  Total pages: 258048
+[    0.493583] Policy zone: DMA
+[    0.493589] Kernel command line: root=/dev/vda1 console=ttysclp0
+[    0.496913] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes, linear)
+[    0.499497] Inode-cache hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.499586] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.506073] Memory: 994828K/1048576K available (12028K kernel code, 3212K rwdata, 6780K rodata, 5216K init, 1264K bss, 53748K reserved, 0K cma-reserved)
+[    0.576896] SLUB: HWalign=256, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+[    0.580098] ftrace: allocating 34215 entries in 134 pages
+[    0.600319] ftrace: allocated 134 pages with 3 groups
+[    0.607650] rcu: Hierarchical RCU implementation.
+[    0.607655] rcu: 	RCU restricting CPUs from NR_CPUS=512 to nr_cpu_ids=1.
+[    0.607657] 	Rude variant of Tasks RCU enabled.
+[    0.607660] 	Tracing variant of Tasks RCU enabled.
+[    0.607661] rcu: RCU calculated value of scheduler-enlistment delay is 10 jiffies.
+[    0.607662] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=1
+[    0.673331] NR_IRQS: 3, nr_irqs: 3, preallocated irqs: 3
+[    0.673412] clocksource: tod: mask: 0xffffffffffffffff max_cycles: 0x3b0a9be803b0a9, max_idle_ns: 1805497147909793 ns
+[    0.675395] random: crng init done
+[    0.675431] Console: colour dummy device 80x25
+[    0.675704] printk: console [ttysclp0] enabled
+[    0.675765] pid_max: default: 32768 minimum: 301
+[    0.675790] LSM: Security Framework initializing
+[    0.675805] landlock: Up and running.
+[    0.675806] Yama: becoming mindful.
+[    0.675850] AppArmor: AppArmor initialized
+[    0.675881] Mount-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.675890] Mountpoint-cache hash table entries: 2048 (order: 2, 16384 bytes, linear)
+[    0.676586] rcu: Hierarchical SRCU implementation.
+[    0.676813] smp: Bringing up secondary CPUs ...
+[    0.676814] smp: Brought up 1 node, 1 CPU
+[    0.676992] devtmpfs: initialized
+[    0.677131] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns
+[    0.677156] futex hash table entries: 256 (order: 4, 65536 bytes, linear)
+[    0.677337] NET: Registered PF_NETLINK/PF_ROUTE protocol family
+[    0.677375] audit: initializing netlink subsys (disabled)
+[    0.677443] Spectre V2 mitigation: etokens
+[    0.678258] audit: type=2000 audit(1763684229.527:1): state=initialized audit_enabled=0 res=1
+[    0.678337] HugeTLB registered 1.00 MiB page size, pre-allocated 0 pages
+[    0.678982] iommu: Default domain type: Translated 
+[    0.678983] iommu: DMA domain TLB invalidation policy: strict mode 
+[    0.679060] SCSI subsystem initialized
+[    0.679317] NetLabel: Initializing
+[    0.679318] NetLabel:  domain hash size = 128
+[    0.679320] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.679333] NetLabel:  unlabeled traffic allowed by default
+[    0.691591] VFS: Disk quotas dquot_6.6.0
+[    0.691603] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.691691] AppArmor: AppArmor Filesystem Enabled
+[    0.698040] NET: Registered PF_INET protocol family
+[    0.698104] IP idents hash table entries: 16384 (order: 5, 131072 bytes, linear)
+[    0.698312] tcp_listen_portaddr_hash hash table entries: 512 (order: 1, 8192 bytes, linear)
+[    0.698398] Table-perturb hash table entries: 65536 (order: 6, 262144 bytes, linear)
+[    0.698425] TCP established hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.698477] TCP bind hash table entries: 8192 (order: 5, 131072 bytes, linear)
+[    0.698488] TCP: Hash tables configured (established 8192 bind 8192)
+[    0.698586] MPTCP token hash table entries: 1024 (order: 2, 24576 bytes, linear)
+[    0.698599] UDP hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.698608] UDP-Lite hash table entries: 512 (order: 2, 16384 bytes, linear)
+[    0.698634] NET: Registered PF_UNIX/PF_LOCAL protocol family
+[    0.698642] NET: Registered PF_XDP protocol family
+[    0.698826] Trying to unpack rootfs image as initramfs...
+[    0.710103] kvm-s390: SIE is not available
+[    0.710127] hypfs: The hardware system does not support hypfs
+[    0.710226] Initialise system trusted keyrings
+[    0.710233] Key type blacklist registered
+[    0.710256] workingset: timestamp_bits=45 max_order=18 bucket_order=0
+[    0.711184] zbud: loaded
+[    0.711378] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.713984] fuse: init (API version 7.34)
+[    0.714407] integrity: Platform Keyring initialized
+[    0.730272] Key type asymmetric registered
+[    0.730293] Asymmetric key parser 'x509' registered
+[    0.730407] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)
+[    0.730487] io scheduler mq-deadline registered
+[    0.730895] hvc_iucv: The z/VM IUCV HVC device driver cannot be used without z/VM
+[    0.741418] loop: module loaded
+[    0.741630] tun: Universal TUN/TAP device driver, 1.6
+[    0.741716] device-mapper: core: CONFIG_IMA_DISABLE_HTABLE is disabled. Duplicate IMA measurements will not be recorded in the IMA log.
+[    0.741770] device-mapper: uevent: version 1.0.3
+[    0.741863] device-mapper: ioctl: 4.45.0-ioctl (2021-03-22) initialised: dm-devel@redhat.com
+[    0.741890] drop_monitor: Initializing network drop monitor service
+[    0.742134] NET: Registered PF_INET6 protocol family
+[    0.775627] Freeing initrd memory: 6460K
+[    0.786362] Segment Routing with IPv6
+[    0.786435] In-situ OAM (IOAM) with IPv6
+[    0.786560] NET: Registered PF_PACKET protocol family
+[    0.786622] Key type dns_resolver registered
+[    0.786729] cio: Channel measurement facility initialized using format extended (mode autodetected)
+[    0.787050] sclp_sd: Store Data request failed (eq=2, di=3, response=0x40f0, flags=0x00, status=0, rc=-5)
+[    0.787348] registered taskstats version 1
+[    0.787907] Loading compiled-in X.509 certificates
+[    0.789040] Loaded X.509 cert 'Build time autogenerated kernel key: 2c5af77429869bbc66fb3721fe1885ad9bbbf0e8'
+[    0.789897] Loaded X.509 cert 'Canonical Ltd. Live Patch Signing: 14df34d1a87cf37625abec039ef2bf521249b969'
+[    0.790812] Loaded X.509 cert 'Canonical Ltd. Kernel Module Signing: 88f752e560a1e0737e31163a466ad7b70a850c19'
+[    0.790815] blacklist: Loading compiled-in revocation X.509 certificates
+[    0.790832] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing: 61482aa2830d0ab2ad5af10b7250da9033ddcef0'
+[    0.790846] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2017): 242ade75ac4a15e50d50c84b0d45ff3eae707a03'
+[    0.790859] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (ESM 2018): 365188c1d374d6b07c3c8f240f8ef722433d6a8b'
+[    0.790887] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2019): c0746fd6c5da3ae827864651ad66ae47fe24b3e8'
+[    0.790958] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v1): a8d54bbb3825cfb94fa13c9f8a594a195c107b8d'
+[    0.790973] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v2): 4cf046892d6fd3c9a5b03f98d845f90851dc6a8c'
+[    0.790985] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (2021 v3): 100437bb6de6e469b581e61cd66bce3ef4ed53af'
+[    0.790998] Loaded X.509 cert 'Canonical Ltd. Secure Boot Signing (Ubuntu Core 2019): c1d57b8f6b743f23ee41f4f7ee292f06eecadfb9'
+[    0.791780] zswap: loaded using pool lzo/zbud
+[    0.791910] Key type .fscrypt registered
+[    0.791913] Key type fscrypt-provisioning registered
+[    0.796512] Key type encrypted registered
+[    0.796518] AppArmor: AppArmor sha1 policy hashing enabled
+[    0.796531] ima: No TPM chip found, activating TPM-bypass!
+[    0.796535] Loading compiled-in module X.509 certificates
+[    0.797445] Loaded X.509 cert 'Build time autogenerated kernel key: 2c5af77429869bbc66fb3721fe1885ad9bbbf0e8'
+[    0.797450] ima: Allocated hash algorithm: sha1
+[    0.797465] ima: No architecture policies found
+[    0.797485] evm: Initialising EVM extended attributes:
+[    0.797486] evm: security.selinux
+[    0.797487] evm: security.SMACK64
+[    0.797489] evm: security.SMACK64EXEC
+[    0.797490] evm: security.SMACK64TRANSMUTE
+[    0.797491] evm: security.SMACK64MMAP
+[    0.797491] evm: security.apparmor
+[    0.797493] evm: security.ima
+[    0.797493] evm: security.capability
+[    0.797495] evm: HMAC attrs: 0x1
+[    0.800500] Freeing unused kernel image (initmem) memory: 5216K
+[    0.801129] Write protected read-only-after-init data: 136k
+[    0.801271] Checked W+X mappings: passed, no unexpected W+X pages found
+[    0.801276] Run /init as init process
+
+info: initramfs: up at 0.81
+modprobe: module e1000 not found in modules.dep
+modprobe: module e1000e not found in modules.dep
+modprobe: module igb not found in modules.dep
+modprobe: module igbvf not found in modules.dep
+[    0.876723] virtio_blk virtio1: [vda] 229376 512-byte logical blocks (117 MB/112 MiB)
+modprobe: module usbhid not found in modules.dep
+modprobe: module hid-generic not found in modules.dep
+modprobe: module ahci not found in modules.dep
+failed loading these modules:  e1000 e1000e igb igbvf usbhid hid-generic ahci
+failed to load modules.
+info: copying initramfs to /dev/vda1
+info: initramfs loading root from /dev/vda1
+info: /etc/init.d/rc.sysinit: up at 1.11
+info: container: none
+/etc/init.d/rc.sysinit: line 58: filecap: not found
+Starting syslogd: OK
+modprobe: module e1000 not found in modules.dep
+modprobe: module e1000e not found in modules.dep
+modprobe: module igb not found in modules.dep
+modprobe: module igbvf not found in modules.dep
+modprobe: module usbhid not found in modules.dep
+modprobe: module hid-generic not found in modules.dep
+modprobe: module ahci not found in modules.dep
+failed loading these modules:  e1000 e1000e igb igbvf usbhid hid-generic ahci
+failed to load modules.
+WARN: /etc/rc3.d/S10-load-modules failed
+Saving random seed: OK
+Starting acpid: OK
+Starting network: dhcpcd-9.4.1 starting
+dhcp_vendor: No such process
+eth0: waiting for carrier
+eth0: carrier acquired
+DUID 00:01:00:01:30:b2:6c:06:52:54:00:12:34:56
+eth0: IAID 00:12:34:56
+eth0: adding address fe80::5054:ff:fe12:3456
+eth0: soliciting an IPv6 router
+eth0: soliciting a DHCP lease
+eth0: offered 10.0.2.15 from 10.0.2.2
+eth0: probing address 10.0.2.15/24
+eth0: Router Advertisement from fe80::2
+eth0: adding address fec0::5054:ff:fe12:3456/64
+eth0: adding route to fec0::/64
+eth0: adding default route via fe80::2
+eth0: leased 10.0.2.15 for 86400 seconds
+eth0: adding route to 10.0.2.0/24
+eth0: adding default route via 10.0.2.2
+forked to background, child pid 231
+OK
+checking http://169.254.169.254/2009-04-04/instance-id
+failed 1/20: up 8.03. request failed
+failed 2/20: up 10.04. request failed
+failed 3/20: up 12.04. request failed
+failed 4/20: up 14.04. request failed
+failed 5/20: up 16.04. request failed
+failed 6/20: up 18.05. request failed
+failed 7/20: up 20.05. request failed
+failed 8/20: up 22.06. request failed
+failed 9/20: up 24.06. request failed
+failed 10/20: up 26.06. request failed
+failed 11/20: up 28.06. request failed
+failed 12/20: up 30.07. request failed
+failed 13/20: up 32.07. request failed
+failed 14/20: up 34.08. request failed
+failed 15/20: up 36.08. request failed
+failed 16/20: up 38.08. request failed
+failed 17/20: up 40.09. request failed
+failed 18/20: up 42.09. request failed
+failed 19/20: up 44.09. request failed
+failed 20/20: up 46.10. request failed
+failed to read iid from metadata. tried 20
+failed to get instance-id of datasource
+Top of dropbear init script
+Starting dropbear sshd: failed to get instance-id of datasource
+OK
+GROWROOT: NOCHANGE: partition 1 is size 227295. it cannot be grown
+/dev/root resize failed (127) [took 0.00s]
+=== system information ===
+Platform: Container: none
+Arch: s390x
+CPU(s): 1 @ na MHz
+Cores/Sockets/Threads: 1/na/1
+Virt-type: 
+RAM Size: 982MB
+Disks:
+NAME MAJ:MIN      SIZE LABEL         MOUNTPOINT
+vda  252:0   117440512               
+vda1 252:1   116375040 cirros-rootfs /
+=== sshd host keys ===
+-----BEGIN SSH HOST KEY KEYS-----
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCg4XUMlaKX7eP+ErQxLcy6gajuBpm6jniLv2p/cFZqyXN2VFFUya7J8q/7pmsJwown4emhNMhLAqg0aH3BPhQn0yJDlNvy9L8OhfdqyKDUokEP12zfVYr1E5B01vjUF/1YWohlhMP9PZkS6T2Ix2Truh7XFj52HhtLYEezGIRmmKtIB+lInMj6vHTHhuWfc2rCmPQvbEH4joEllt128OJpDxX/V2YAip9vqhj8cqlzYpLs1sWRCVRPIsyfkNQR68Qg0jifQ61fDKe3ZcVzPo2k6xSQiXFJVjjTce2Quq5tmadaEeAUV5fkcG77tpXEWtUdtM7Q6OFqsAeuHHzlwwQd root@buildroot
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBClOTyYp3wjAMZ+Xk5ZQkhKYSm2PE6jMWDkamFmzt8oXjYJCtnKtQBnNVXCgmOv0GRy7shGoy/sIhGhtKz1oEno= root@buildroot
+-----END SSH HOST KEY KEYS-----
+=== network info ===
+if-info: lo,up,127.0.0.1,8,,
+if-info: eth0,up,10.0.2.15,24,fe80::5054:ff:fe12:3456/64,
+ip-route:default via 10.0.2.2 dev eth0  src 10.0.2.15  metric 1002 
+ip-route:10.0.2.0/24 dev eth0 scope link  src 10.0.2.15  metric 1002 
+ip-route6:fe80::/64 dev eth0  metric 256 
+ip-route6:fec0::/64 dev eth0  metric 1002 
+ip-route6:default via fe80::2 dev eth0  metric 1002 
+ip-route6:multicast ff00::/8 dev eth0  metric 256 
+=== datasource: None None ===
+=== cirros: current=d251120 uptime=48.77 ===
+sh: curl: not found
+  ____               ____  ____
+ / __/ __ ____ ____ / __ \/ __/
+/ /__ / // __// __// /_/ /\ \ 
+\___//_//_/  /_/   \____/___/ 
+   http://cirros-cloud.net

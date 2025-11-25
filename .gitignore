@@ -1,5 +1,6 @@
-build*
-buildroot*
+/build*
+!/build-s390x.log
+/buildroot*
 ccache/*
 download/*
 grubd
